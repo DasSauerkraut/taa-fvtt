@@ -1,0 +1,32 @@
+{
+  "name": "taa",
+  "title": "These Ancient Armaments",
+  "description": "The These Ancient Armaments system for FoundryVTT!",
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.5.5",
+  "compatibleCoreVersion": "0.7.1",
+  "templateVersion": 2,
+  "author": "DasSauerkraut",
+  "esmodules": ["module/taa.js"],
+  "styles": [
+    "css/taa.css",
+    "css/actor.css"
+  ],
+  "scripts": [],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 1,
+  "gridUnits": "yd",
+  "primaryTokenAttribute": "hp",
+  "secondaryTokenAttribute": "thp",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE.txt"
+}

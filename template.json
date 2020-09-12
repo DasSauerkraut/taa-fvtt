@@ -1,0 +1,106 @@
+{
+  "Actor": {
+    "types": ["character"],
+    "templates": {
+      "base": {
+        "hp": {
+          "value": 10,
+          "min": 0,
+          "max": 10
+        },
+        "thp": {
+          "value": 5,
+          "min": 0,
+          "max": 5
+        },
+        "bloodied" : {
+          "value": 0
+        }
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "biography": "",
+      "attributes": {
+        "xp": {
+          "current": 0,
+          "spent": 0,
+          "total": 0
+        }
+      },
+      "abilities": {
+        "ws": {
+          "label": "Weapon Score",
+          "value": 20
+        },
+        "str": {
+          "label": "Strength",
+          "value": 20
+        },
+        "con": {
+          "label": "Constitution",
+          "value": 20
+        },
+        "agi": {
+          "label": "Agility",
+          "value": 20
+        },
+        "dex": {
+          "label": "Dexterity",
+          "value": 20
+        },
+        "int": {
+          "label": "Intellect",
+          "value": 20
+        },
+        "will": {
+          "label": "Willpower",
+          "value": 20
+        },
+        "cha": {
+          "label": "Charisma",
+          "value": 20
+        }
+      }
+    }
+  },
+  "Item": {
+    "types": ["item", "armament", "power", "ability", "upgrade"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "item": {
+      "templates": ["base"],
+      "quantity": 1,
+      "weight": 0
+    },
+    "armament": {
+      "templates": ["base"],
+      "quantity": 1,
+      "weight": 0
+    },
+    "activepower": {
+      "templates": ["base"],
+      "type": "",
+      "action": "",
+      "effect": ""
+    },
+    "passivepower": {
+      "templates": ["base"],
+      "level": 0,
+      "effect": ""
+    },
+    "upgrade": {
+      "templates": ["base"],
+      "level": 0,
+      "effect": ""
+    },
+    "ability": {
+      "templates": ["base"],
+      "quantity": 1,
+      "weight": 0
+    }
+  }
+}
