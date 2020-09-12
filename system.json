@@ -9,8 +9,7 @@
   "author": "DasSauerkraut",
   "esmodules": ["module/taa.js"],
   "styles": [
-    "css/taa.css",
-    "css/actor.css"
+    "css/taa.css"
   ],
   "scripts": [],
   "packs": [],

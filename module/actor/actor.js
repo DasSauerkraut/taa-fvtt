@@ -16,6 +16,7 @@ export class TAAActor extends Actor {
 
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
+    console.log(this.data)
     if (actorData.type === 'character') this._prepareCharacterData(actorData);
   }
 
@@ -28,7 +29,7 @@ export class TAAActor extends Actor {
     // Make modifications to data here. For example:
 
     // Loop through ability scores, and add their modifiers to our sheet output.
-    for (let [key, ability] of Object.entries(data.abilities)) {
+    for (let [key, ability] of Object.entries(data.stats)) {
       // Calculate the modifier using d20 rules.
       ability.mod = Math.floor((ability.value - 10) / 2);
     }

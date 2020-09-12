@@ -21,7 +21,7 @@ export class TAAActorSheet extends ActorSheet {
   getData() {
     const data = super.getData();
     data.dtypes = ["String", "Number", "Boolean"];
-    for (let attr of Object.values(data.data.attributes)) {
+    for (let attr of Object.values(data.data.stats)) {
       attr.isCheckbox = attr.dtype === "Boolean";
     }
     return data;

@@ -17,7 +17,6 @@
 	position: absolute;
 	width: 576px;
 	height: 611px;
-	background-color: rgba(255,255,255,1);
 	overflow: hidden;
 	--web-view-name: Actor;
 	--web-view-id: Actor;
@@ -32,16 +31,7 @@
 	top: 0px;
 	overflow: visible;
 }
-#avatar {
-	fill: rgba(255,255,255,0);
-	stroke: rgba(147,139,119,1);
-	stroke-width: 1px;
-	stroke-linejoin: miter;
-	stroke-linecap: butt;
-	stroke-miterlimit: 4;
-	shape-rendering: auto;
-}
-.avatar {
+.profile-img {
 	position: absolute;
 	overflow: visible;
 	width: 100px;
@@ -480,7 +470,7 @@ input {
 }
 #bloodied-value {
 	left: 26px;
-	top: 14px;
+	top: 15px;
 	position: absolute;
 	overflow: visible;
 	width: 15px;
@@ -631,7 +621,7 @@ input {
 	width: 50px;
 	height: 19px;
 	left: 12px;
-	top: 14px;
+	top: 15px;
 	overflow: visible;
 }
 #hp-current {
@@ -732,7 +722,7 @@ input {
 }
 #fate {
 	left: 10px;
-	top: 12px;
+	top: 13px;
 	position: absolute;
 	overflow: visible;
 	width: 9px;

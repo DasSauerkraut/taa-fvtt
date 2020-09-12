@@ -1,0 +1,45 @@
+{
+    "DETAILS.Name": "Name",
+    "DETAILS.Species": "Species",
+    "DETAILS.Gender": "Gender",
+    "DETAILS.Movement": "Movement",
+    "DETAILS.XP": "XP",
+    "DETAILS.XPTotal": "Total",
+    "DETAILS.XPSpent": "Spent",
+    "DETAILS.XPCurrent": "Current",
+    "DETAILS.Backgrounds": "Backgrounds",
+
+    "DETAILS.Motivation": "Motivation",
+
+
+    "STATUS.HP": "Hit Points",
+    "STATUS.THP": "Temporary HP",
+    "STATUS.Bloodied": "Bloodied",
+    "STATUS.Penalties": "Penalties",
+    "STATUS.Encumberance": "Encumberance",
+
+    "STATUS.Fate": "Fate",
+    "STATUS.Resolve": "Resolve",
+
+    "STATUSAbbrev.HP": "HP",
+    "STATUSAbbrev.THP": "Temp. HP",
+    "STATUSAbbrev.Encumberance": "Enc.",
+    
+    "CHAR.WS": "Weapon Score",
+    "CHAR.Str": "Strength",
+    "CHAR.Con": "Constitution",
+    "CHAR.Agi": "Agillity",
+    "CHAR.Dex": "Dexterity",
+    "CHAR.Will": "Willpower",
+    "CHAR.Int": "Intellect",
+    "CHAR.Cha": "Charisma",
+
+    "CHARAbbrev.WS": "WS",
+    "CHARAbbrev.Str": "Str",
+    "CHARAbbrev.Con": "Con",
+    "CHARAbbrev.Agi": "Agi",
+    "CHARAbbrev.Dex": "Dex",
+    "CHARAbbrev.Will": "Will",
+    "CHARAbbrev.Int": "Int",
+    "CHARAbbrev.Cha": "Cha"
+}
