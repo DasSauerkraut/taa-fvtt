@@ -13,14 +13,68 @@
   font-family: "Goudament";
 }
 
-.window-app .window-content {
+.app.window-app.taa.sheet.actor .window-content{
   background-image: url(../ui/actorsheet/actorbackground.png);
+}
+
+.app.window-app.taa.sheet.actor .window-header.flexrow.draggable.resizable {
+	background-image: url(../ui/actorsheet/actor-sheet-character-window-content.png);
 }
 
 .rollable:hover, .rollable:focus {
   color: #000;
   text-shadow: 0 0 10px red;
   cursor: pointer;
+}
+
+.stats-table{
+	border: 1px solid #736953a6;
+    width: fit-content;
+    border-top: none;
+}
+
+.stats-table .stat-row {
+	text-align: center;
+	display: table-row;
+}
+
+.stats-table .stat-row .stat-item{
+	margin:auto;
+	border: 1px solid #736953a6;
+	display: table-cell;
+	width: 12%;
+	border-bottom: none;
+	border-right: none;
+	font-size: 16px;
+	box-shadow: 0 0 4px #00000052 inset;
+}
+
+.stats-table .stat-row .stat-input{
+	font-family: Goudament;
+	text-align:center;
+	width: 100%;
+	font-size: 16px
+}
+
+.stats-table .stat-row .stat-header{
+	font-family: TypographerRotunda;
+	margin:auto;
+	border: 1px solid #736953a6;
+	display: table-cell;
+	border-bottom: none;
+	border-right: none;
+	padding-left: 2px;
+	padding-right: 2px;
+	font-size: 16px;
+	background: rgba(99, 99, 99, 0.1);
+	box-shadow: 0 0 4px #00000075 inset;
+}
+
+.stats-table .stat-row .stat-item.rollable {
+	font-family: TypographerRotunda;
+  font-weight: bold;
+  color: #562727;
+  box-shadow: 0 0 8px 2px #3e060652 inset;
 }
 
 .grid,
@@ -157,7 +211,7 @@
   -ms-flex: 0 0 100px;
   flex: 0 0 100px;
   height: 100px;
-  margin-right: 10px;
+	margin-right: 10px;
 }
 
 .taa .sheet-header .header-fields {
@@ -200,20 +254,10 @@
 .tab-body {
   position: relative;
   top: 165px;
-  background-color: wheat;
-}
-
-.tab-body .stats-grid {
-  display: flexbox;
-  width: 100px;
-}
-
-.tab-body .stats-grid .stats-header {
-  width: 25%;
-}
-
-.tab-body .stats-grid .stats-item {
-  width: 30%;
+	/* background-color: wheat; */
+	margin-left: 20px;
+	margin-right: 20px;
+	max-height: fit-content;
 }
 
 .taa .sheet-body,
@@ -236,14 +280,17 @@
 }
 
 .taa .tabs {
-  height: 40px;
-  border-top: 1px solid #AAA;
-  border-bottom: 1px solid #AAA;
+  height: 30px;
+  border-top: 2px solid #aba28f;
+	border-bottom: 2px solid #aba28f;
+	position: relative;
+	top: 163px;
 }
 
 .taa .tabs .item {
-  line-height: 40px;
-  font-weight: bold;
+  line-height: 30px;
+  font-size: 16px;
+  font-family: TypographerRotunda;
 }
 
 .taa .tabs .item.active {
@@ -326,11 +373,13 @@
 }
 .profile-img {
 	position: absolute;
-	overflow: visible;
+	overflow: hidden;
 	width: 100px;
 	height: 100px;
 	left: 20px;
 	top: 59px;
+	border: none;
+	box-shadow: 0 0 8px 2px #00000052 inset
 }
 #Line_1 {
 	fill: transparent;
@@ -422,7 +471,6 @@
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
-	color: rgba(87,87,87,0.949);
 }
 #motivation-group {
 	position: absolute;
@@ -490,7 +538,6 @@
 	font-style: normal;
 	font-weight: normal;
 	font-size: 16px;
-	color: rgba(87,87,87,0.949);
 }
 #gender-input {
 	left: 434px;
@@ -759,7 +806,6 @@ input {
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
-	color: rgba(87,87,87,0.949);
 }
 #bloodied-value {
 	left: 26px;
@@ -795,7 +841,6 @@ input {
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
-	color: rgba(87,87,87,0.949);
 }
 #movement-value {
 	left: 33px;
@@ -831,7 +876,6 @@ input {
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
-	color: rgba(87,87,87,0.949);
 }
 #thp-values-group {
 	position: absolute;
@@ -907,7 +951,6 @@ input {
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
-	color: rgba(87,87,87,0.949);
 }
 #hp-values-group {
 	position: absolute;
@@ -975,7 +1018,6 @@ input {
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
-	color: rgba(87,87,87,0.949);
 }
 #Backgrounds {
 	left: 329px;
@@ -989,7 +1031,6 @@ input {
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
-	color: rgba(87,87,87,0.949);
 }
 #fate-group {
 	position: absolute;
@@ -1011,7 +1052,6 @@ input {
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
-	color: rgba(87,87,87,0.949);
 }
 #fate {
 	left: 10px;
@@ -1047,7 +1087,6 @@ input {
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
-	color: rgba(87,87,87,0.949);
 }
 #resolve {
 	left: 23px;
@@ -1239,7 +1278,6 @@ input {
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
-	color: rgba(87,87,87,0.949);
 }
 #current-xp {
 	left: 54px;
@@ -1253,7 +1291,6 @@ input {
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
-	color: rgba(87,87,87,0.949);
 }
 #Line_4_cf {
 	opacity: 0.7;

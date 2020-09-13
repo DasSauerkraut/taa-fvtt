@@ -1,0 +1,35 @@
+<div class="stats-table">
+  <div class="stat-row">
+    <span class="stat-header"></span>
+    {{#each actor.data.stats as |stat s|}}
+    <span class="stat-header">{{localize stat.abrev}}</span>
+    {{/each}}
+  </div>
+  <div class="stat-row">
+    <span class="stat-header">Initial</span>
+    {{#each actor.data.stats as |stat s|}}
+    <span class="stat-item"><input class="stat-input" name="data.stats.{{s}}.initial" value="{{stat.initial}}"
+        data-dtype="Number" /></span>
+    {{/each}}
+  </div>
+  <div class="stat-row">
+    <span class="stat-header">Improv.</span>
+    {{#each actor.data.stats as |stat s|}}
+    <span class="stat-item"><input class="stat-input" name="data.stats.{{s}}.improvements" value="{{stat.improvements}}"
+        data-dtype="Number" /></span>
+    {{/each}}
+  </div>
+  <div class="stat-row">
+    <span class="stat-header">Mod</span>
+    {{#each actor.data.stats as |stat s|}}
+    <span class="stat-item"><input class="stat-input" name="data.stats.{{s}}.modifiers" value="{{stat.modifiers}}"
+        data-dtype="Number" /></span>
+    {{/each}}
+  </div>
+  <div class="stat-row">
+    <span class="stat-header">Total</span>
+    {{#each actor.data.stats as |stat s|}}
+    <span class="stat-item rollable">{{stat.value}}</span>
+    {{/each}}
+  </div>
+</div>

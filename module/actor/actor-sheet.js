@@ -9,9 +9,9 @@ export class TAAActorSheet extends ActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["taa", "sheet", "actor"],
       template: "systems/taa/templates/actor/actor-sheet.html",
-      width: 600,
-      height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
+      width: 576,
+      height: 611,
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".tab-body", initial: "main" }]
     });
   }
 

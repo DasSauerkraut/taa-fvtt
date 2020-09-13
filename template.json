@@ -95,6 +95,12 @@
                 "label":"STATUS.Bloodied",
                 "value":0
              },
+             "absorption": {
+               "type": "Number",
+               "label": "STATUS.Absorption",
+               "base": 0,
+               "armor": 0
+             },
               "penalties":{
                  "type":"String",
                  "label":"STATUS.Penalties",
@@ -144,12 +150,12 @@
            "fate":{
               "type":"Number",
               "label":"STATUS.Fate",
-              "value":0
+              "value": 3
            },
            "resolve":{
               "type":"Number",
               "label":"STATUS.Resolve",
-              "value":0
+              "value": 3
            }
         },
         "details":{

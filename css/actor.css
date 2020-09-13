@@ -1095,7 +1095,7 @@ input {
 	top: 124.5px;
 	transform: matrix(1,0,0,1,0,0);
 }
-#defense-group {
+/* #defense-group {
 	position: absolute;
 	width: 100px;
 	height: 95px;
@@ -1533,4 +1533,4 @@ input {
 	left: 120.5px;
 	top: 158.5px;
 	transform: matrix(1,0,0,1,0,0);
-}
+} */

@@ -3,6 +3,7 @@ import { TAAActor } from "./actor/actor.js";
 import { TAAActorSheet } from "./actor/actor-sheet.js";
 import { TAAItem } from "./item/item.js";
 import { TAAItemSheet } from "./item/item-sheet.js";
+import { preloadHandlebarsTemplates } from "./templates.js"
 
 Hooks.once('init', async function() {
 
@@ -16,7 +17,7 @@ Hooks.once('init', async function() {
    * @type {String}
    */
   CONFIG.Combat.initiative = {
-    formula: "1d20",
+    formula: "1d10",
     decimals: 2
   };
 
@@ -44,4 +45,6 @@ Hooks.once('init', async function() {
   Handlebars.registerHelper('toLowerCase', function(str) {
     return str.toLowerCase();
   });
+
+  preloadHandlebarsTemplates();
 });

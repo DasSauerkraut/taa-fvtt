@@ -1,298 +1,259 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
-	<body>
-	   <div id="Actor">
-		  <div id="actorbackground"> </div>
-		  <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
-		  <svg class="Line_1" viewBox="0 0 219 1">
-			 <path id="Line_1" d="M 0 0 L 219 0">
-			 </path>
-		  </svg>
-		  <div id="Name">
-			 <span>{{localize 'DETAILS.Name'}}</span>
-		  </div>
-		  <div id="Species">
-			 <span>{{localize 'DETAILS.Species'}}</span>
-		  </div>
-		  <div id="Gender">
-			 <span>{{localize 'DETAILS.Gender'}}</span>
-		  </div>
-		  <svg class="Line_2" viewBox="0 0 123 1">
-			 <path id="Line_2" d="M 0 0 L 123 0">
-			 </path>
-		  </svg>
-		  <input id="name-input" value="{{actor.name}}" data-dtype="String"/>
-		  <div id="motivation-group">
-			 <svg class="Line_15" viewBox="0 0 218 1">
-				<path id="Line_15" d="M 0 0 L 218 0">
+	<body class="actor-sheet-background">
+		<header id="Actor">
+			<img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+			<svg class="Line_1" viewBox="0 0 219 1">
+				<path id="Line_1" d="M 0 0 L 219 0">
 				</path>
-			 </svg>
-			 <div id="Motivation">
-				<span>{{localize 'DETAILS.Motivation'}}</span>
-			 </div>
-			 <input id="motivation-input" name="data.details.motivation.value" value="{{data.details.motivation.value}}" data-dtype="String"/>
-		  </div>
-		  <input id="species-input" name="data.details.species.value" value="{{data.details.species.value}}" data-dtype="String"/>
-		  <input id="gender-input" name="data.details.gender.value" value="{{data.details.gender.value}}" data-dtype="String"/>
-		  <svg class="Line_3" viewBox="0 0 84 1">
-			 <path id="Line_3" d="M 0 0 L 84 0">
-			 </path>
-		  </svg>
-		  <div id="background-group">
-			 <input id="background-1" name="data.details.backgrounds.background-1.value" value="{{data.details.backgrounds.background-1.value}}" data-dtype="String"/>
-			 <input id="background-2" name="data.details.backgrounds.background-2.value" value="{{data.details.backgrounds.background-2.value}}" data-dtype="String"/>
-			 <input id="background-3" name="data.details.backgrounds.background-3.value" value="{{data.details.backgrounds.background-3.value}}" data-dtype="String"/>
-			 <svg class="Line_16" viewBox="0 0 154 1">
-				<path id="Line_16" d="M 0 0 L 154 0">
+			</svg>
+			<div id="Name">
+				<span>{{localize 'DETAILS.Name'}}</span>
+			</div>
+			<div id="Species">
+				<span>{{localize 'DETAILS.Species'}}</span>
+			</div>
+			<div id="Gender">
+				<span>{{localize 'DETAILS.Gender'}}</span>
+			</div>
+			<svg class="Line_2" viewBox="0 0 123 1">
+				<path id="Line_2" d="M 0 0 L 123 0">
 				</path>
-			 </svg>
-			 <svg class="Line_17" viewBox="0 0 154 1">
-				<path id="Line_17" d="M 0 0 L 154 0">
+			</svg>
+			<input id="name-input" name="name" value="{{actor.name}}" data-dtype="String" />
+			<div id="motivation-group">
+				<svg class="Line_15" viewBox="0 0 218 1">
+					<path id="Line_15" d="M 0 0 L 218 0">
+					</path>
+				</svg>
+				<div id="Motivation">
+					<span>{{localize 'DETAILS.Motivation'}}</span>
+				</div>
+				<input id="motivation-input" name="data.details.motivation.value" value="{{data.details.motivation.value}}"
+					data-dtype="String" />
+			</div>
+			<input id="species-input" name="data.details.species.value" value="{{data.details.species.value}}"
+				data-dtype="String" />
+			<input id="gender-input" name="data.details.gender.value" value="{{data.details.gender.value}}"
+				data-dtype="String" />
+			<svg class="Line_3" viewBox="0 0 84 1">
+				<path id="Line_3" d="M 0 0 L 84 0">
 				</path>
-			 </svg>
-			 <svg class="Line_18" viewBox="0 0 154 1">
-				<path id="Line_18" d="M 0 0 L 154 0">
-				</path>
-			 </svg>
-			 <div id="Group_12">
-				<input id="background-2-points" name="data.details.backgrounds.background-2.points" value="{{data.details.backgrounds.background-2.points}}" data-dtype="Number"/>
-				<div id="">
-				   <span>+</span>
-				</div>
-			 </div>
-			 <div id="Group_14">
-				<input id="background-3-points" name="data.details.backgrounds.background-3.points" value="{{data.details.backgrounds.background-3.points}}" data-dtype="Number"/>
-				<div id="_">
-				   <span>+</span>
-				</div>
-			 </div>
-			 <div id="Group_13">
-				<input id="background-1-points" name="data.details.backgrounds.background-1.points" value="{{data.details.backgrounds.background-1.points}}" data-dtype="Number"/>
-				<div id="_ba">
-				   <span>+</span>
-				</div>
-			 </div>
-		  </div>
-		  <div id="bloodied-group">
-			 <div id="Bloodied">
-				<span>{{localize 'STATUS.Bloodied'}}</span>
-			 </div>
-			 <div id="bloodied-value">
-				{{data.status.bloodied.value}}
-			 </div>
-		  </div>
-		  <div id="movement-group">
-			 <div id="Movement">
-				<span>{{localize 'DETAILS.Movement'}}</span>
-			 </div>
-			 <div id="movement-value">
-				{{data.details.move.value}}
-			 </div>
-		  </div>
-		  <div id="thp-group">
-			 <div id="Temp_HP">
-				<span>{{localize 'STATUSAbbrev.THP'}}</span>
-			 </div>
-			 <div id="thp-values-group">
-				<input id="thp-current" name="data.status.thp.value" value="{{data.status.thp.value}}" data-dtype="Number"/>
-				<div id="thp-max">
-				   <span>{{data.status.thp.max}}</span>
-				</div>
-				<svg class="Line_4" viewBox="0 0 1 11">
-				   <path id="Line_4" d="M 0 11 L 0 0">
-				   </path>
+			</svg>
+			<div id="background-group">
+				<input id="background-1" name="data.details.backgrounds.background-1.value"
+					value="{{data.details.backgrounds.background-1.value}}" data-dtype="String" />
+				<input id="background-2" name="data.details.backgrounds.background-2.value"
+					value="{{data.details.backgrounds.background-2.value}}" data-dtype="String" />
+				<input id="background-3" name="data.details.backgrounds.background-3.value"
+					value="{{data.details.backgrounds.background-3.value}}" data-dtype="String" />
+				<svg class="Line_16" viewBox="0 0 154 1">
+					<path id="Line_16" d="M 0 0 L 154 0">
+					</path>
 				</svg>
-			 </div>
-		  </div>
-		  <div id="hp-group">
-			 <div id="Hit_Points">
-				<span>{{localize 'STATUS.HP'}}</span>
-			 </div>
-			 <div id="hp-values-group">
-				<input id="hp-current" name="data.status.hp.value" value="{{data.status.hp.value}}" data-dtype="Number"/>
-				<div id="hp-max">
-				   <span>{{data.status.hp.max}}</span>
-				</div>
-				<svg class="Line_4_bs" viewBox="0 0 1 11">
-				   <path id="Line_4_bs" d="M 0 11 L 0 0">
-				   </path>
+				<svg class="Line_17" viewBox="0 0 154 1">
+					<path id="Line_17" d="M 0 0 L 154 0">
+					</path>
 				</svg>
-			 </div>
-		  </div>
-		  <div id="XP">
-			 <span>{{localize 'DETAILS.XP'}}</span>
-		  </div>
-		  <div id="Backgrounds">
-			 <span>{{localize 'DETAILS.Backgrounds'}}</span>
-		  </div>
-		  <div id="fate-group">
-			 <div id="Fate">
-				<span>{{localize 'STATUS.Fate'}}</span>
-			 </div>
-			 <a id="fate">
-			 <span>{{data.status.fate.value}}</span>
-			 </a>
-		  </div>
-		  <div id="resolve-group">
-			 <div id="Resolve">
-				<span>{{localize 'STATUS.Resolve'}}</span>
-			 </div>
-			 <a id="resolve">
-			 <span>{{data.status.resolve.value}}</span>
-			 </a>
-		  </div>
-		  <svg class="Line_5" viewBox="0 0 64 1">
-			 <path id="Line_5" d="M 0 0 L 64 0">
-			 </path>
-		  </svg>
-		  <svg class="Line_23" viewBox="0 0 64 1">
-			 <path id="Line_23" d="M 0 0 L 64 0">
-			 </path>
-		  </svg>
-		  <div id="Group_18">
-			 <div id="xp-total-group">
-				<div id="Total">
-				   <span>{{localize 'DETAILS.XPTotal'}}</span>
-				</div>
-				<input id="total-xp" name="data.details.experience.total" value="{{data.details.experience.total}}" data-dtype="Number"/>
-				<svg class="Line_4_b" viewBox="0 0 1 11">
-				   <path id="Line_4_b" d="M 0 11 L 0 0">
-				   </path>
+				<svg class="Line_18" viewBox="0 0 154 1">
+					<path id="Line_18" d="M 0 0 L 154 0">
+					</path>
 				</svg>
-			 </div>
-			 <div id="xp-spent-group">
-				<div id="-_Spent">
-				   <span>- {{localize 'DETAILS.XPSpent'}}</span>
-				</div>
-				<input id="spent-xp" name="data.details.experience.spent" value="{{data.details.experience.spent}}" data-dtype="Number"/>
-				<svg class="Line_4_cb" viewBox="0 0 1 11">
-				   <path id="Line_4_cb" d="M 0 11 L 0 0">
-				   </path>
-				</svg>
-			 </div>
-			 <div id="xp-current-group">
-				<div id="Current">
-				   <span>{{localize 'DETAILS.XPCurrent'}}</span>
-				</div>
-				<div id="current-xp">
-				</div>
-				<svg class="Line_4_cf" viewBox="0 0 1 11">
-				   <path id="Line_4_cf" d="M 0 11 L 0 0">
-				   </path>
-				</svg>
-			 </div>
-			 <svg class="Line_12" viewBox="0 0 64 1">
-				<path id="Line_12" d="M 0 0 L 64 0">
-				</path>
-			 </svg>
-		  </div>
-		  <svg class="Line_11" viewBox="0 0 1 54.902">
-			 <path id="Line_11" d="M 0 0 L 0 54.90213012695313">
-			 </path>
-		  </svg>
-		  <svg class="Line_20" viewBox="0 0 1 54.902">
-			 <path id="Line_20" d="M 0 0 L 0 54.90213012695313">
-			 </path>
-		  </svg>
-		  <svg class="Line_21" viewBox="0 0 1 54.902">
-			 <path id="Line_21" d="M 0 0 L 0 54.90213012695313">
-			 </path>
-		  </svg>
-		  <svg class="Line_6" viewBox="0 0 64 1">
-			 <path id="Line_6" d="M 0 0 L 64 0">
-			 </path>
-		  </svg>
-		  <svg class="Line_22" viewBox="0 0 64 1">
-			 <path id="Line_22" d="M 0 0 L 64 0">
-			 </path>
-		  </svg>
-		  
-	<nav class="navigation" data-group="primary">
-		<a class="item" data-tab="main">Main</a>
-        <!-- <a class="item" data-tab="description">Description</a> -->
-    </nav>
-
-    
-
-        <!-- {{!-- Biography Tab --}}
-        <div class="tab biography" data-group="primary" data-tab="description">
-            {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
-        </div> -->
-		{{!-- Sheet Body --}}
-		<section class="tab-body">
-			{{!-- Owned Items Tab --}}
-			<div data-group="primary" data-tab="main">
-				<div class="stats-grid">
-					<div>
-						<span class="stats-header">Initial</span>
-						<span class="stats-header">Improv.</span>
-						<span class="stats-header">Modifiers</span>
-						<span class="stats-header">Current</span>
+				<div id="Group_12">
+					<input id="background-2-points" name="data.details.backgrounds.background-2.points"
+						value="{{data.details.backgrounds.background-2.points}}" data-dtype="Number" min="0" max="10"/>
+					<div id="">
+						<span>+</span>
 					</div>
-					{{#each actor.data.stats as |stat s|}}
-					<div>
-						<span class="stats-item">{{stat.initial}}</span>
-						<span class="stats-item">{{stat.improvements}}</span> 
-						<span class="stats-item">{{stat.modifiers}}</span>   
+				</div>
+				<div id="Group_14">
+					<input id="background-3-points" name="data.details.backgrounds.background-3.points"
+						value="{{data.details.backgrounds.background-3.points}}" data-dtype="Number" min=0 max="10"/>
+					<div id="_">
+						<span>+</span>
 					</div>
-					{{/each}}
+				</div>
+				<div id="Group_13">
+					<input id="background-1-points" name="data.details.backgrounds.background-1.points"
+						value="{{data.details.backgrounds.background-1.points}}" data-dtype="Number" min="0" max="10"/>
+					<div id="_ba">
+						<span>+</span>
+					</div>
 				</div>
 			</div>
-		</section>
-        
-
-				<!-- <div class="table-row">
-				<div class="row-type table-data">
-					<div class="header-block">
-					{{localize "Initial"}}
-					</div>
+			<div id="bloodied-group">
+				<div id="Bloodied">
+					<span>{{localize 'STATUS.Bloodied'}}</span>
 				</div>
-				{{#each actor.data.characteristics as |ch c|}}
-				<div class="table-data">
-					<input name="data.characteristics.{{c}}.initial" type="text" value="{{ch.initial}}" data-dtype="Number">
+				<div id="bloodied-value">
+					{{data.status.bloodied.value}}
 				</div>
-				{{/each}}
-				</div>
-				<div class="table-row">
-				<div class="row-type table-data">
-					<div class="header-block">
-					{{localize "Advances"}}
-					</div>
-				</div>
-				{{#each actor.data.characteristics as |ch c|}}
-				<div class="table-data">
-					<input name="data.characteristics.{{c}}.advances" type="text" value="{{ch.advances}}" data-dtype="Number">
-				</div>
-				{{/each}}
-				</div>
-				<div class="table-row">
-				<div class="row-type table-data">
-					<div class="header-block">
-					{{localize "Modifiers"}}
-					</div>
-				</div>
-				{{#each actor.data.characteristics as |ch c|}}
-				<div class="table-data">
-					<input name="data.characteristics.{{c}}.modifier" type="text" value="{{ch.modifier}}" data-dtype="Number">
-				</div>
-				{{/each}}
-				</div>
-				<div class="table-row bottom">
-				<div class="row-type table-data">
-					<div class="header-block">
-					{{localize "Current"}}
-					</div>
-				</div>
-				{{#each actor.data.characteristics as |ch c|}}
-				<div class="table-data ch-value" data-char="{{c}}"><a>{{ch.value}}</a></div>
-				{{/each}}
-				</div> -->
-			<!-- </div> -->
 			</div>
+			<div id="movement-group">
+				<div id="Movement">
+					<span>{{localize 'DETAILS.Movement'}}</span>
+				</div>
+				<div id="movement-value">
+					{{data.details.move.value}}
+				</div>
+			</div>
+			<div id="thp-group">
+				<div id="Temp_HP">
+					<span>{{localize 'STATUSAbbrev.THP'}}</span>
+				</div>
+				<div id="thp-values-group">
+					<input id="thp-current" name="data.status.thp.value" value="{{data.status.thp.value}}" data-dtype="Number" />
+					<div id="thp-max">
+						<span>{{data.status.thp.max}}</span>
+					</div>
+					<svg class="Line_4" viewBox="0 0 1 11">
+						<path id="Line_4" d="M 0 11 L 0 0">
+						</path>
+					</svg>
+				</div>
+			</div>
+			<div id="hp-group">
+				<div id="Hit_Points">
+					<span>{{localize 'STATUS.HP'}}</span>
+				</div>
+				<div id="hp-values-group">
+					<input id="hp-current" name="data.status.hp.value" value="{{data.status.hp.value}}" data-dtype="Number" />
+					<div id="hp-max">
+						<span>{{data.status.hp.max}}</span>
+					</div>
+					<svg class="Line_4_bs" viewBox="0 0 1 11">
+						<path id="Line_4_bs" d="M 0 11 L 0 0">
+						</path>
+					</svg>
+				</div>
+			</div>
+			<div id="XP">
+				<span>{{localize 'DETAILS.XP'}}</span>
+			</div>
+			<div id="Backgrounds">
+				<span>{{localize 'DETAILS.Backgrounds'}}</span>
+			</div>
+			<div id="fate-group">
+				<div id="Fate">
+					<span>{{localize 'STATUS.Fate'}}</span>
+				</div>
+				<a id="fate">
+					<span>{{data.status.fate.value}}</span>
+				</a>
+			</div>
+			<div id="resolve-group">
+				<div id="Resolve">
+					<span>{{localize 'STATUS.Resolve'}}</span>
+				</div>
+				<a id="resolve">
+					<span>{{data.status.resolve.value}}</span>
+				</a>
+			</div>
+			<svg class="Line_5" viewBox="0 0 64 1">
+				<path id="Line_5" d="M 0 0 L 64 0">
+				</path>
+			</svg>
+			<svg class="Line_23" viewBox="0 0 64 1">
+				<path id="Line_23" d="M 0 0 L 64 0">
+				</path>
+			</svg>
+			<div id="Group_18">
+				<div id="xp-total-group">
+					<div id="Total">
+						<span>{{localize 'DETAILS.XPTotal'}}</span>
+					</div>
+					<input id="total-xp" name="data.details.experience.total" value="{{data.details.experience.total}}"
+						data-dtype="Number" />
+					<svg class="Line_4_b" viewBox="0 0 1 11">
+						<path id="Line_4_b" d="M 0 11 L 0 0">
+						</path>
+					</svg>
+				</div>
+				<div id="xp-spent-group">
+					<div id="-_Spent">
+						<span>- {{localize 'DETAILS.XPSpent'}}</span>
+					</div>
+					<input id="spent-xp" name="data.details.experience.spent" value="{{data.details.experience.spent}}"
+						data-dtype="Number" />
+					<svg class="Line_4_cb" viewBox="0 0 1 11">
+						<path id="Line_4_cb" d="M 0 11 L 0 0">
+						</path>
+					</svg>
+				</div>
+				<div id="xp-current-group">
+					<div id="Current">
+						<span>{{localize 'DETAILS.XPCurrent'}}</span>
+					</div>
+					<div id="current-xp">
+						{{data.details.experience.current}}
+					</div>
+					<svg class="Line_4_cf" viewBox="0 0 1 11">
+						<path id="Line_4_cf" d="M 0 11 L 0 0">
+						</path>
+					</svg>
+				</div>
+				<svg class="Line_12" viewBox="0 0 64 1">
+					<path id="Line_12" d="M 0 0 L 64 0">
+					</path>
+				</svg>
+			</div>
+			<svg class="Line_11" viewBox="0 0 1 54.902">
+				<path id="Line_11" d="M 0 0 L 0 54.90213012695313">
+				</path>
+			</svg>
+			<svg class="Line_20" viewBox="0 0 1 54.902">
+				<path id="Line_20" d="M 0 0 L 0 54.90213012695313">
+				</path>
+			</svg>
+			<svg class="Line_21" viewBox="0 0 1 54.902">
+				<path id="Line_21" d="M 0 0 L 0 54.90213012695313">
+				</path>
+			</svg>
+			<svg class="Line_6" viewBox="0 0 64 1">
+				<path id="Line_6" d="M 0 0 L 64 0">
+				</path>
+			</svg>
+			<svg class="Line_22" viewBox="0 0 64 1">
+				<path id="Line_22" d="M 0 0 L 64 0">
+				</path>
+			</svg>
+		</header>
+
+			<nav class="sheet-tabs tabs" data-group="primary">
+				<a class="item" data-tab="main">Main</a>
+				<a class="item" data-tab="combat">Combat</a>
+				<a class="item" data-tab="armament">Armament</a>
+				<a class="item" data-tab="items">Items</a>
+				<a class="item" data-tab="description">Description</a>
+			</nav>
+
+			{{!-- Sheet Body --}}
+			<section class="tab-body">
+				
+				{{!-- Main Tab --}}
+				<div class="tab" data-group="primary" data-tab="main">
+					{{> "systems/taa/templates/actor/actor-main.html"}}
+				</div>
+
+				{{!-- Combat Tab --}}
+				<div class="tab" data-group="primary" data-tab="combat">
+					{{> "systems/taa/templates/actor/actor-combat.html"}}
+				</div>
+
+				{{!-- Armament Tab --}}
+				<div class="tab" data-group="primary" data-tab="armament">
+					{{> "systems/taa/templates/actor/actor-armament.html"}}
+				</div>
+
+				{{!-- Items Tab --}}
+				<div class="tab" data-group="primary" data-tab="items">
+					{{> "systems/taa/templates/actor/actor-items.html"}}
+				</div>
+				
+				{{!-- Biography Tab --}}
+				<div class="tab" data-group="primary" data-tab="description">
+					{{> "systems/taa/templates/actor/actor-description.html"}}
         </div>
-	   </div>
-	   
-  
+		</div>
+		</section>
 	</body>
-
-	
- </form> 
+</form>
