@@ -272,22 +272,17 @@
   },
   "Item":{
      "types":[
+        "armament",
         "ammunition",
         "armour",
-        "career",
         "container",
-        "critical",
-        "disease",
         "injury",
         "money",
-        "mutation",
-        "prayer",
-        "psychology",
-        "talent",
-        "trapping",
+        "ability",
+        "item",
         "skill",
-        "spell",
-        "trait",
+        "power",
+        "upgrade",
         "weapon"
      ],
      "templates":{
@@ -309,9 +304,9 @@
            "price":{
               "type":"String",
               "label":"Price",
-              "gc":0,
+              "lbs":0,
               "ss":0,
-              "bp":0
+              "cd":0
            }
         },
         "availability":{
@@ -340,53 +335,6 @@
               "value":0
            }
         }
-     },
-     "career":{
-        "templates":[
-           "description"
-        ],
-        "careergroup":{
-           "type":"String",
-           "label":"Career Group",
-           "value":""
-        },
-        "class":{
-           "type":"String",
-           "label":"Class",
-           "value":""
-        },
-        "current":{
-           "type":"Boolean",
-           "value":false
-        },
-        "complete":{
-           "type":"Boolean",
-           "value":false
-        },
-        "level":{
-           "type":"String",
-           "label":"Career Level",
-           "value":1
-        },
-        "status":{
-           "tier":"",
-           "standing":0
-        },
-        "stats":[
-           
-        ],
-        "skills":[
-           
-        ],
-        "talents":[
-           
-        ],
-        "trappings":[
-           
-        ],
-        "incomeSkill":[
-           
-        ]
      },
      "weapon":{
         "templates":[
@@ -477,14 +425,9 @@
            "label":"Penalty",
            "value":""
         },
-        "qualities":{
+        "abilities":{
            "type":"String",
-           "label":"Qualities",
-           "value":""
-        },
-        "flaws":{
-           "type":"String",
-           "label":"Flaws",
+           "label":"Abilities",
            "value":""
         },
         "special":{
@@ -492,21 +435,19 @@
            "label":"Special",
            "value":""
         },
-        "maxAP":{
-           "head":0,
-           "lArm":0,
-           "rArm":0,
-           "lLeg":0,
-           "rLeg":0,
-           "body":0
+        "absorption": {
+            "type":"Number",
+            "label":"Absorption",
+            "value":0
         },
-        "currentAP":{
-           "head":-1,
-           "lArm":-1,
-           "rArm":-1,
-           "lLeg":-1,
-           "rLeg":-1,
-           "body":-1
+        "elements": {
+            "type":"Number",
+            "label":"Elements",
+            "fire": 0,
+            "elec": 0,
+            "water": 0,
+            "ice": 0,
+            "dragon": 0
         },
         "location":{
            "type":"Number",
@@ -599,10 +540,6 @@
            "value":""
         },
         "worn":false,
-        "spellIngredient":{
-           "type":"String",
-           "value":""
-        },
         "location":{
            "type":"Number",
            "label":"Location",
