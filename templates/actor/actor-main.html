@@ -29,7 +29,7 @@
   <div class="stat-row">
     <span class="stat-header">Total</span>
     {{#each actor.data.stats as |stat s|}}
-    <span class="stat-item rollable">{{stat.value}}</span>
+    <span class="stat-item rollable" data-roll="{{stat.value}}">{{stat.value}}</span>
     {{/each}}
   </div>
 </div>

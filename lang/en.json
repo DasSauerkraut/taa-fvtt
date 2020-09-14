@@ -41,5 +41,13 @@
     "CHARAbbrev.Dex": "Dex",
     "CHARAbbrev.Will": "Will",
     "CHARAbbrev.Int": "Int",
-    "CHARAbbrev.Cha": "Cha"
+    "CHARAbbrev.Cha": "Cha",
+
+    "ROLL.Success": "Success",
+    "ROLL.Failure": "Failure",
+    "ROLL.Critical": "Critical",
+    
+    "ROLL.Astounding": "Astounding",
+    "ROLL.Impressive": "Impressive",
+    "ROLL.Marginal": "Marginal" 
 }

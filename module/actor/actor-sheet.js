@@ -1,3 +1,4 @@
+import { DiceTAA } from "../scripts/dice.js";
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -53,6 +54,36 @@ export class TAAActorSheet extends ActorSheet {
 
     // Rollable abilities.
     html.find('.rollable').click(this._onRoll.bind(this));
+
+    // Increment/Decrement Fate
+    html.find('#fate').click(ev => {
+      var isRightMB;
+      if ("which" in ev)  // Gecko (Firefox), WebKit (Safari/Chrome) & Opera
+          isRightMB = ev.which == 3; 
+      else if ("button" in ev)  // IE, Opera 
+          isRightMB = ev.button == 2;
+    })
+
+    html.find('#fate').mousedown(async ev => {
+      let newValue;
+      if(ev.button == 0){
+        newValue = this.actor.data.data.status.fate.value + 1 < 3 ? this.actor.data.data.status.fate.value + 1 : 3
+      } else {
+        newValue = this.actor.data.data.status.fate.value - 1 > -1 ? this.actor.data.data.status.fate.value - 1 : 0
+      }
+      this.actor.update({ [`data.status.fate.value`]: newValue })
+    });
+
+    html.find('#resolve').mousedown(async ev => {
+      let newValue;
+      if(ev.button == 0){
+        newValue = this.actor.data.data.status.resolve.value + 1 < 3 ? this.actor.data.data.status.resolve.value + 1 : 3
+      } else {
+        newValue = this.actor.data.data.status.resolve.value - 1 > -1 ? this.actor.data.data.status.resolve.value - 1 : 0
+      }
+      this.actor.update({ [`data.status.resolve.value`]: newValue })
+    });
+
   }
 
   /* -------------------------------------------- */
@@ -91,17 +122,9 @@ export class TAAActorSheet extends ActorSheet {
    */
   _onRoll(event) {
     event.preventDefault();
-    const element = event.currentTarget;
-    const dataset = element.dataset;
+    const target = event.currentTarget.dataset.roll;
 
-    if (dataset.roll) {
-      let roll = new Roll(dataset.roll, this.actor.data.data);
-      let label = dataset.label ? `Rolling ${dataset.label}` : '';
-      roll.roll().toMessage({
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: label
-      });
-    }
+    DiceTAA.rollTest(target)
   }
 
 }
