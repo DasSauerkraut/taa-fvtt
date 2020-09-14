@@ -21,12 +21,16 @@ export class TAAActorSheet extends ActorSheet {
   /** @override */
   getData() {
     const data = super.getData();
+    mergeObject(data.actor, this.actor.prepare())
     data.dtypes = ["String", "Number", "Boolean"];
     for (let attr of Object.values(data.data.stats)) {
       attr.isCheckbox = attr.dtype === "Boolean";
     }
+    data.isGM = game.user.isGM;
+    console.log()
     return data;
   }
+
 
   /** @override */
   activateListeners(html) {
@@ -54,6 +58,33 @@ export class TAAActorSheet extends ActorSheet {
 
     // Rollable abilities.
     html.find('.rollable').click(this._onRoll.bind(this));
+
+    //select whole input field on click
+    $("input[type=text]").focusin(function() {
+      $(this).select();
+    });
+
+    html.find('.skill-input').focusout(async event => {
+      event.preventDefault()
+      if (!this.skillsToEdit)
+        this.skillsToEdit = []
+
+      console.log(event.target)
+      let itemId = event.target.attributes["data-item-id"].value;
+      let itemToEdit = duplicate(this.actor.getEmbeddedEntity("OwnedItem", itemId))
+      console.log(itemToEdit)
+      itemToEdit.data.improvements.value = Number(event.target.value);
+      this.skillsToEdit.push(itemToEdit);
+
+      // Wait for the listener above to set this true before updating - allows for tabbing through skills
+      // if (!this.skillUpdateFlag)
+      //   return;
+
+      await this.actor.updateEmbeddedEntity("OwnedItem", this.skillsToEdit);
+
+      console.log(this.actor)
+      this.skillsToEdit = [];
+    });
 
     // Increment/Decrement Fate
     html.find('#fate').click(ev => {

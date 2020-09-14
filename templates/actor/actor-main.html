@@ -33,3 +33,30 @@
     {{/each}}
   </div>
 </div>
+<div class="skills-table">
+  <ol class="items-list">
+                <li class="item flexrow item-header">
+                  <div class="item-name">Name</div>
+                  <div class="item-stat">Stat</div>
+                  <div class="item-improv">Improv.</div>
+                  <div class="item-total">Total</div>
+                  <div class="item-controls">
+                    <a class="item-control item-create" title="Create Skill" data-type="item"><i class="fas fa-plus"></i></a>
+                  </div>
+                </li>
+            {{#each actor.basicSkills as |skill s|}}
+                <li class="item flexrow" data-item-id="{{skill._id}}">
+                    <!-- <div class="item-image"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></div> -->
+                    <h4 class="item-name">{{skill.name}}</h4>
+                    <span>{{localize skill.data.stat.abrev}}: {{skill.data.stat.num}} + </span>
+                    <input data-item-id="{{skill._id}}" class="skill-input" value="{{skill.data.improvements.value}}"
+                    data-dtype="Number"  />
+                    <span class="skill-item rollable" data-roll="{{skill.data.total.value}}">{{skill.data.total.value}}</span>
+                    <div class="item-controls">
+                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+            {{/each}}
+            </ol>
+</div>

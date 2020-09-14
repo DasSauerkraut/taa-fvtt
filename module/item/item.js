@@ -13,5 +13,29 @@ export class TAAItem extends Item {
     const itemData = this.data;
     const actorData = this.actor ? this.actor.data : {};
     const data = itemData.data;
+    
+    if (this.data.type == "skill")
+      this.prepareSkill()
   }
+
+  prepareSkill()
+  {
+    if (this.data.type != "skill")
+      return
+
+    const data = this.data;
+
+    if(!hasProperty(data, "data.modifier.value"))
+      setProperty(data, "data.modifier.value", 0)
+
+    if (this.isOwned)
+    {
+      if (!data.data.total)
+        data.data.total = {};
+      data.data.total.value = data.data.modifier.value 
+        + data.data.improvements.value 
+        + this.actor.data.data.stats[data.data.stat.value].value
+    }
+  }
+
 }

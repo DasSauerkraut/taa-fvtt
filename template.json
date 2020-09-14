@@ -281,7 +281,8 @@
         "ability",
         "item",
         "skill",
-        "power",
+        "activepower",
+        "passivepower",
         "upgrade",
         "weapon"
      ],
@@ -525,7 +526,7 @@
            "value":true
         }
      },
-     "trapping":{
+     "item":{
         "templates":[
            "description",
            "quantity",
@@ -534,7 +535,7 @@
            "availability",
            "location"
         ],
-        "trappingType":{
+        "itemType":{
            "type":"String",
            "label":"Trapping Type",
            "value":""
@@ -546,7 +547,7 @@
            "value":0
         }
      },
-     "talent":{
+     "ability":{
         "templates":[
            "description"
         ],
@@ -559,11 +560,6 @@
            "type":"Number",
            "label":"improvements",
            "value":1
-        },
-        "career":{
-           "value":"",
-           "type":"String",
-           "label":"Career"
         },
         "tests":{
            "type":"String",
@@ -583,9 +579,9 @@
            "value":"",
            "type":"String"
         },
-        "characteristic":{
+        "stat":{
            "type":"String",
-           "label":"Characteristic",
+           "label":"Stat",
            "value":"ws"
         },
         "improvements":{
@@ -598,16 +594,10 @@
            "label":"Total"
         }
      },
-     "spell":{
+     "activepower":{
         "templates":[
            "description"
         ],
-        "lore":{
-           "type":"String",
-           "label":"Lore",
-           "value":"",
-           "effect":""
-        },
         "range":{
            "type":"String",
            "label":"Range",
@@ -630,90 +620,52 @@
            "label":"Damage",
            "value":""
         },
-        "cn":{
-           "type":"Number",
-           "label":"Casting Number",
-           "value":0,
-           "SL":0
-        },
-        "magicMissile":{
+        "equipped":{
            "type":"Boolean",
-           "label":"Magic Missile",
+           "label":"Equipped",
            "value":false
-        },
-        "memorized":{
-           "type":"Boolean",
-           "label":"Memorized",
-           "value":false
-        },
-        "ingredients":[
-           
-        ],
-        "currentIng":{
-           "type":"Number",
-           "label":"Ingredient",
-           "value":0
-        },
-        "wind":{
-           "value":""
         }
      },
-     "prayer":{
-        "templates":[
-           "description"
-        ],
-        "type":{
-           "type":"String",
-           "label":"Type",
-           "value":""
-        },
-        "god":{
-           "type":"String",
-           "label":"God",
-           "value":""
-        },
-        "range":{
-           "type":"String",
-           "label":"Range",
-           "value":""
-        },
-        "duration":{
-           "type":"String",
-           "label":"Duration",
-           "value":""
-        },
-        "target":{
-           "type":"String",
-           "label":"Target",
-           "value":"",
-           "aoe":false
-        },
-        "damage":{
-           "type":"String",
-           "label":"Damage",
-           "value":""
-        }
-     },
-     "mutation":{
-        "templates":[
-           "description"
-        ],
-        "mutationType":{
-           "label":"Type",
-           "type":"String",
-           "value":""
-        },
-        "modifier":{
-           "value":"",
-           "type":"String",
-           "label":"Modifier"
-        },
-        "modifiesSkills":{
-           "value":false,
-           "type":"Boolean",
-           "label":"Skill Modifier?"
-        }
-     },
+     "passivepower":{
+      "templates":[
+         "description"
+      ],
+      "max":{
+         "type":"String",
+         "label":"Max improvements",
+         "value":"1"
+      },
+      "improvements":{
+         "type":"Number",
+         "label":"improvements",
+         "value":1
+      },
+      "tests":{
+         "type":"String",
+         "label":"Tests",
+         "value":null
+      }
+   },
+   "upgrade":{
+      "templates":[
+         "description"
+      ],
+      "max":{
+         "type":"String",
+         "label":"Max improvements",
+         "value":"1"
+      },
+      "improvements":{
+         "type":"Number",
+         "label":"improvements",
+         "value":1
+      },
+      "tests":{
+         "type":"String",
+         "label":"Tests",
+         "value":null
+      }
+   },
      "injury":{
         "templates":[
            "description"
@@ -732,79 +684,6 @@
            "label":"Duration",
            "value":"",
            "type":"String"
-        }
-     },
-     "critical":{
-        "templates":[
-           "description"
-        ],
-        "wounds":{
-           "value":"1",
-           "type":"String",
-           "label":"Wounds"
-        },
-        "modifier":{
-           "value":"",
-           "type":"String",
-           "label":"Test Modifier"
-        },
-        "location":{
-           "value":"",
-           "type":"String",
-           "label":"Location"
-        }
-     },
-     "disease":{
-        "templates":[
-           "description"
-        ],
-        "contraction":{
-           "label":"Contraction",
-           "value":"",
-           "type":"String"
-        },
-        "incubation":{
-           "label":"Incubation",
-           "value":"",
-           "type":"String"
-        },
-        "duration":{
-           "label":"Duration",
-           "value":"",
-           "type":"String"
-        },
-        "symptoms":{
-           "label":"Symptoms",
-           "value":"",
-           "type":"String"
-        },
-        "permanent":{
-           "label":"Permanent",
-           "value":"",
-           "type":"String"
-        }
-     },
-     "psychology":{
-        "templates":[
-           "description"
-        ]
-     },
-     "trait":{
-        "templates":[
-           "description"
-        ],
-        "rollable":{
-           "value":false,
-           "label":"Rollable",
-           "type":"Boolean",
-           "rollCharacteristic":"",
-           "bonusCharacteristic":"",
-           "defaultDifficulty":"challenging"
-        },
-        "specification":{
-           "value":"",
-           "type":"String",
-           "label":"Specification"
         }
      },
      "money":{

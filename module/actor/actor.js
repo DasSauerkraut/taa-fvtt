@@ -2,7 +2,20 @@
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
  */
+
+import TAA from "../system/config.js"
+import TAAUtility from "../system/utility.js";
+
 export class TAAActor extends Actor {
+
+  //this is called when the character sheet is rendered for the first time
+  prepare() {
+    let preparedData = duplicate(this.data)
+    console.log('Preparing!')
+    mergeObject(preparedData, this.prepareItems())
+
+    return preparedData
+  }
 
   /**
    * Augment the basic actor data with additional dynamic data.
@@ -44,7 +57,9 @@ export class TAAActor extends Actor {
     if (data.status.encumbrance.max != enc){
       data.status.encumbrance.max = enc;
     }
-    console.log(this.data)
+
+    // this.prepareItems();
+    console.log(this.data);
   }
 
   /**
@@ -89,4 +104,49 @@ export class TAAActor extends Actor {
     return [hp, thp, bloodied, absorption, enc]
   }
 
+  prepareItems(){
+    let actorData = duplicate(this.data)
+    const basicSkills = [];
+    const advancedOrGroupedSkills = [];
+
+    actorData.items.forEach( i => { 
+      try {
+        console.log(i)
+        if(i.type == "skill"){
+          this.prepareSkill(i)
+          if (i.data.grouped.value == "isSpec" || i.data.advanced.value == "adv")
+            advancedOrGroupedSkills.push(i)
+          else
+            basicSkills.push(i);
+        }
+        // Advanced Skills
+        // Basic Skills
+      } catch (error) {
+        console.error("Something went wrong with preparing item " + i.name + ": " + error)
+        ui.notifications.error("Something went wrong with preparing item " + i.name + ": " + error)
+      }
+    })
+
+
+    return {
+      basicSkills: basicSkills.sort(TAAUtility.alphabeticalSorter),
+      advancedOrGroupedSkills: advancedOrGroupedSkills.sort(TAAUtility.alphabeticalSorter)
+    }
+  }
+
+  prepareSkill(skill){
+    let data = this.data;
+    skill.data.stat.num = data.data.stats[skill.data.stat.value].value;
+    if (skill.data.modifier)
+    {
+      if (skill.data.modifier.value > 0)
+        skill.modified = "positive";
+      else if (skill.data.modifier.value < 0)
+        skill.modified = "negative"
+    }
+    skill.data.stat.abrev = TAA.statAbbrev[skill.data.stat.value];
+    // skill.data.cost = WFRP_Utility._calculateAdvCost(skill.data.advances.value, "skill")
+    console.log(skill)
+    return skill
+  }
 }

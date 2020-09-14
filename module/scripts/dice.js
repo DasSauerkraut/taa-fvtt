@@ -38,6 +38,7 @@ export class DiceTAA {
 
             if(roll.total <= 5 && SL < 1)
                 SL = 1;
+            SL = "+" + SL
         }
 
         switch (Math.abs(Number(SL))) {
