@@ -21,6 +21,81 @@
 	background-image: url(../ui/actorsheet/actor-sheet-character-window-content.png);
 }
 
+
+/*-----Skill Tables------*/
+.skills-table{
+	width: 100%;
+	display: flex;
+}
+
+.skills-table .subsection{
+	width: 50%;
+	display: table;
+	padding: 0;
+	border: 1px solid #736953a6;
+}
+
+.skills-table .subsection .title{
+	display: table-caption;
+    font-family: TypographerRotunda;
+    text-align: center;
+    margin: auto;
+    font-size: 16px;
+    border: 1px solid #736953a6;
+    box-shadow: 0 0 8px 2px #8c272752 inset;
+}
+
+.skills-table .subsection .header{
+	display: table-row;
+	box-shadow: 0 0 8px 2px #3e060652 inset;
+}
+
+
+.skills-table .subsection .header .item{
+	display: table-cell;
+	font-family: TypographerRotunda;
+	padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+}
+
+.skills-table .subsection .list{
+	display: table-row;
+}
+
+.skills-table .subsection .list .item{
+	display: table-cell;
+	border: 1px solid #736953a6;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    border-bottom: none;
+    padding-left: 1px;
+    padding-right: 1px;
+	width: fit-content;
+	vertical-align: middle;
+	font-size: 16px;
+	box-shadow: 0 0 4px 0px #00000075 inset;
+}
+
+.skills-table .subsection .list .item.stat{
+	width: 50px;
+}
+
+.skills-table .subsection .list .item.input{
+	width: 30px;
+}
+.skills-table .subsection .list .item.input .box{
+	width: inherit;
+	text-align: inherit;
+	font-family: Goudament;
+	font-size: 16px;
+}
+.skills-table .subsection .list .item.control{
+	font-size: 10px;
+}
+
+
 .rollable:hover, .rollable:focus {
   color: #000;
   text-shadow: 0 0 10px red;

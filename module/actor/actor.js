@@ -33,7 +33,7 @@ export class TAAActor extends Actor {
     data.status.absorption.total = data.status.absorption.base + data.status.absorption.armor
     // loop through stats, calculate total and bonus.
     for (let s of Object.values(data.stats)) {
-      s.value = s.initial + s.improvements + (s.modifiers || 0)
+      s.value = s.initial + s.improvements + (s.modifier || 0)
       s.bonus = Math.floor(s.value / 10)
       //CALCULATE COST TO ADVANCE HERE
     }
@@ -113,11 +113,14 @@ export class TAAActor extends Actor {
       try {
         console.log(i)
         if(i.type == "skill"){
-          this.prepareSkill(i)
+          let skill = this.prepareSkill(i);
+          console.log('post prep')
+          console.log(i)
+          this.updateEmbeddedEntity("OwnedItem", skill)
           if (i.data.grouped.value == "isSpec" || i.data.advanced.value == "adv")
-            advancedOrGroupedSkills.push(i)
+            advancedOrGroupedSkills.push(skill)
           else
-            basicSkills.push(i);
+            basicSkills.push(skill);
         }
         // Advanced Skills
         // Basic Skills

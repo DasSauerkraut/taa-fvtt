@@ -24,12 +24,18 @@ export class TAAItem extends Item {
       return
 
     const data = this.data;
-
+    console.log('item prep')
+    console.log(data)
     if(!hasProperty(data, "data.modifier.value"))
       setProperty(data, "data.modifier.value", 0)
 
     if (this.isOwned)
     {
+      if(this.actor.data.data.stats[data.data.stat.value].value == null)
+      {
+        this.actor.data.data.stats[data.data.stat.value].value = this.actor.data.data.stats[data.data.stat.value].initial + this.actor.data.data.stats[data.data.stat.value].modifier + this.actor.data.data.stats[data.data.stat.value].improvements
+      }
+
       if (!data.data.total)
         data.data.total = {};
       data.data.total.value = data.data.modifier.value 

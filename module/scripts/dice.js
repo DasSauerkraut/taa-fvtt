@@ -75,9 +75,8 @@ export class DiceTAA {
     static renderRoll(result){
         let chatContent = `<h3> ${result.result} </h3> Roll: ${result.roll} vs ${result.target} <br> SL: ${result.sl}`
         let chatData = {
+          content: chatContent,
           user: game.user._id,
-          speaker: ChatMessage.getSpeaker(),
-          content: chatContent
         };
         ChatMessage.create(chatData, {});
     }
