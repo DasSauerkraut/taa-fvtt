@@ -35,7 +35,8 @@
     font-family: TypographerRotunda;
     font-size: 16px;
     border: 1px solid #736953a6;
-    box-shadow: 0 0 8px 2px #8c272752 inset;
+		box-shadow: 0 0 8px 2px #8c272752 inset;
+		margin-top: 3px;
 }
 .skills-title .section {
 	margin: auto;
@@ -44,6 +45,7 @@
 	border-bottom: none;
 	border-top: none;
 	border-left: none;
+	text-align: center;
 }
 
 .skills-table{
@@ -87,6 +89,10 @@
 	display: table-row;
 }
 
+.skills-table .container .subsection .list:nth-child(odd){
+	background-color: #58323224;
+}
+
 .skills-table .container .subsection .list .item{
 	display: table-cell;
 	border: 1px solid #736953a6;
@@ -109,7 +115,7 @@
 .skills-table .container .subsection .list .item.input{
 	width: 30px;
 }
-.skills-table .container .subsection .list .item.input .box{
+.skills-table .container .subsection .list .item.input .skill-input{
 	width: inherit;
 	text-align: inherit;
 	font-family: Goudament;
@@ -384,6 +390,11 @@
 	border-bottom: 2px solid #aba28f;
 	position: relative;
 	top: 163px;
+}
+
+.taa .tabs.item-sheet {
+	position: relative;
+	top: unset;
 }
 
 .taa .tabs .item {

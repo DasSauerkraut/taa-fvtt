@@ -65,6 +65,7 @@ export class TAAActorSheet extends ActorSheet {
     });
 
     html.find('.skill-input').focusout(async event => {
+      console.log('Skill a')
       event.preventDefault()
       if (!this.skillsToEdit)
         this.skillsToEdit = []

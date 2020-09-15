@@ -57,7 +57,7 @@
           <span>{{skill.data.stat.num}}</span>
         </span>
         <span class="item input">
-          <input data-item-id="{{skill._id}}" class="box" value="{{skill.data.improvements.value}}"
+          <input data-item-id="{{skill._id}}" class="skill-input" value="{{skill.data.improvements.value}}"
             data-dtype="Number" />
         </span>
 
@@ -70,9 +70,9 @@
       {{/each}}
     </ol>
   </div>
-  
+
   <div class="container">
-    
+
     <ol class="subsection">
       <li class="header">
         <div class="item">Name</div>
@@ -85,22 +85,20 @@
       </li>
       {{#each actor.advancedOrGroupedSkills as |skill s|}}
       <li class="list" data-item-id="{{skill._id}}">
-        <div class="container">
-          <h4 class="item">{{skill.name}}</h4>
-          <span class="item stat">
-            <span>{{localize skill.data.stat.abrev}}</span>
-            <span>{{skill.data.stat.num}}</span>
-          </span>
-          <span class="item input">
-            <input data-item-id="{{skill._id}}" class="box" value="{{skill.data.improvements.value}}"
-              data-dtype="Number" />
-          </span>
+        <h4 class="item">{{skill.name}}</h4>
+        <span class="item stat">
+          <span>{{localize skill.data.stat.abrev}}</span>
+          <span>{{skill.data.stat.num}}</span>
+        </span>
+        <span class="item input">
+          <input data-item-id="{{skill._id}}" class="skill-input" value="{{skill.data.improvements.value}}"
+            data-dtype="Number" />
+        </span>
 
-          <span class="item rollable" data-roll="{{skill.data.total.value}}">{{skill.data.total.value}}</span>
-          <div class="item control">
-            <!-- <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a> -->
-            <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-          </div>
+        <span class="item rollable" data-roll="{{skill.data.total.value}}">{{skill.data.total.value}}</span>
+        <div class="item control">
+          <!-- <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a> -->
+          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
         </div>
       </li>
       {{/each}}

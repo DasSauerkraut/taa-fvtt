@@ -1,0 +1,46 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+      <div class="header-fields">
+          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+      </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs item-sheet" data-group="primary">
+      <a class="item" data-tab="description">Description</a>
+      <a class="item" data-tab="details">Details</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+      {{!-- Description Tab --}}
+      <div class="tab" data-group="primary" data-tab="description">
+          {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+      </div>
+
+      {{!-- Attributes Tab --}}
+      <div class="tab attributes" data-group="primary" data-tab="details">
+          <div>
+            <label>Stat</label>
+            <select name="data.stat.value" data-dtype="string">
+              {{#select data.stat.value}}
+              {{#each stat as |s stat|}}
+              <option value="{{stat}}">{{localize s}}</option>
+              {{/each}}
+              {{/select}}
+            </select>
+          </div>
+          <div>
+            <label>Type</label>
+            <select name="data.advanced.value" data-dtype="string">
+              {{#select data.advanced.value}}
+              {{#each skillTypes as |value key|}}
+              <option value="{{key}}">{{value}}</option>
+              {{/each}}
+              {{/select}}
+            </select>
+          </div>
+      </div>
+  </section>
+</form>

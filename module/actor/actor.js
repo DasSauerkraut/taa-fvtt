@@ -114,8 +114,6 @@ export class TAAActor extends Actor {
         console.log(i)
         if(i.type == "skill"){
           let skill = this.prepareSkill(i);
-          console.log('post prep')
-          console.log(i)
           this.updateEmbeddedEntity("OwnedItem", skill)
           if (i.data.grouped.value == "isSpec" || i.data.advanced.value == "adv")
             advancedOrGroupedSkills.push(skill)
@@ -130,10 +128,9 @@ export class TAAActor extends Actor {
       }
     })
 
-
     return {
-      basicSkills: basicSkills.sort(TAAUtility.alphabeticalSorter),
-      advancedOrGroupedSkills: advancedOrGroupedSkills.sort(TAAUtility.alphabeticalSorter)
+      basicSkills: basicSkills.sort(TAAUtility.alphabeticalSorter).sort(TAAUtility.skillSorter),
+      advancedOrGroupedSkills: advancedOrGroupedSkills.sort(TAAUtility.alphabeticalSorter).sort(TAAUtility.skillSorter)
     }
   }
 

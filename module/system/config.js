@@ -23,4 +23,9 @@ TAA.statAbbrev = {
     "cha": "CHARAbbrev.Cha"
 };
 
+TAA.skillTypes = {
+    "bsc": "Basic",
+    "adv": "Advanced"
+};
+
 export default TAA;

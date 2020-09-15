@@ -2,6 +2,7 @@
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
+import TAA from "../system/config.js"
 export class TAAItemSheet extends ItemSheet {
 
   /** @override */
@@ -18,11 +19,11 @@ export class TAAItemSheet extends ItemSheet {
   get template() {
     const path = "systems/taa/templates/item";
     // Return a single sheet for all item types.
-    return `${path}/item-sheet.html`;
+    // return `${path}/item-sheet.html`;
     // Alternatively, you could use the following return statement to do a
     // unique item sheet by type, like `weapon-sheet.html`.
 
-    // return `${path}/${this.item.data.type}-sheet.html`;
+    return `${path}/${this.item.data.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -30,6 +31,10 @@ export class TAAItemSheet extends ItemSheet {
   /** @override */
   getData() {
     const data = super.getData();
+    if (this.item.type === "skill") {
+      data['stat'] = TAA.stats;
+      data['skillTypes'] = TAA.skillTypes;
+    }
     return data;
   }
 
