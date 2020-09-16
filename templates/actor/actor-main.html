@@ -45,13 +45,13 @@
         <div class="item">Stat</div>
         <div class="item">Imp.</div>
         <div class="item">Total</div>
-        <div class="item">
-          <a class="item-control item-create" title="Create Skill" data-type="item"><i class="fas fa-plus"></i></a>
+        <div class="item control">
+          <a class="item-control item-create skill-create" title="Create Basic Skill" data-type="skill" data-skill-type="bsc"><i class="fas fa-plus"></i></a>
         </div>
       </li>
       {{#each actor.basicSkills as |skill s|}}
       <li class="list" data-item-id="{{skill._id}}">
-        <h4 class="item">{{skill.name}}</h4>
+        <div class="item rollable" data-roll="{{skill.data.total.value}}">{{skill.name}}</div>
         <span class="item stat">
           <span>{{localize skill.data.stat.abrev}}</span>
           <span>{{skill.data.stat.num}}</span>
@@ -64,7 +64,7 @@
         <span class="item rollable" data-roll="{{skill.data.total.value}}">{{skill.data.total.value}}</span>
         <div class="item control">
           <!-- <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a> -->
-          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+          <a class="item-control item-delete" title="Delete Item" data-item-id="{{skill._id}}"><i class="fas fa-trash"></i></a>
         </div>
       </li>
       {{/each}}
@@ -79,13 +79,13 @@
         <div class="item">Stat</div>
         <div class="item">Imp.</div>
         <div class="item">Total</div>
-        <div class="item">
-          <a class="item-control item-create" title="Create Skill" data-type="item"><i class="fas fa-plus"></i></a>
+        <div class="item control">
+          <a class="item-control item-create" title="Create Advanced Skill" data-type="skill" data-skill-type="adv"><i class="fas fa-plus"></i></a>
         </div>
       </li>
       {{#each actor.advancedOrGroupedSkills as |skill s|}}
       <li class="list" data-item-id="{{skill._id}}">
-        <h4 class="item">{{skill.name}}</h4>
+        <div class="item rollable" data-roll="{{skill.data.total.value}}">{{skill.name}}</div>
         <span class="item stat">
           <span>{{localize skill.data.stat.abrev}}</span>
           <span>{{skill.data.stat.num}}</span>
@@ -98,7 +98,7 @@
         <span class="item rollable" data-roll="{{skill.data.total.value}}">{{skill.data.total.value}}</span>
         <div class="item control">
           <!-- <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a> -->
-          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+          <a class="item-control item-delete" title="Delete Item" data-item-id="{{skill._id}}"><i class="fas fa-trash"></i></a>
         </div>
       </li>
       {{/each}}

@@ -111,7 +111,7 @@ export class TAAActor extends Actor {
 
     actorData.items.forEach( i => { 
       try {
-        console.log(i)
+        // console.log(i)
         if(i.type == "skill"){
           let skill = this.prepareSkill(i);
           this.updateEmbeddedEntity("OwnedItem", skill)
@@ -146,7 +146,7 @@ export class TAAActor extends Actor {
     }
     skill.data.stat.abrev = TAA.statAbbrev[skill.data.stat.value];
     // skill.data.cost = WFRP_Utility._calculateAdvCost(skill.data.advances.value, "skill")
-    console.log(skill)
+    // console.log(skill)
     return skill
   }
 }

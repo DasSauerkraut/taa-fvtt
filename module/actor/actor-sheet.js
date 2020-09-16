@@ -51,13 +51,23 @@ export class TAAActorSheet extends ActorSheet {
 
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
-      const li = $(ev.currentTarget).parents(".item");
-      this.actor.deleteOwnedItem(li.data("itemId"));
-      li.slideUp(200, () => this.render(false));
+      const li = ev.currentTarget.parentNode.parentNode;
+      this.actor.deleteOwnedItem(li.dataset.itemId);
+      // li.slideUp(200, () => this.render(false));
     });
 
     // Rollable abilities.
-    html.find('.rollable').click(this._onRoll.bind(this));
+    html.find('.rollable').mousedown(async ev => {
+      if(ev.button == 0){
+        console.log('roll')
+        this._onRoll(ev)
+      } else {
+        const li = ev.currentTarget.parentNode;
+        const item = this.actor.getOwnedItem(li.dataset.itemId);
+        if(item)
+          item.sheet.render(true);
+      }
+    });
 
     //select whole input field on click
     $("input[type=text]").focusin(function() {
@@ -65,7 +75,6 @@ export class TAAActorSheet extends ActorSheet {
     });
 
     html.find('.skill-input').focusout(async event => {
-      console.log('Skill a')
       event.preventDefault()
       if (!this.skillsToEdit)
         this.skillsToEdit = []
@@ -88,14 +97,6 @@ export class TAAActorSheet extends ActorSheet {
     });
 
     // Increment/Decrement Fate
-    html.find('#fate').click(ev => {
-      var isRightMB;
-      if ("which" in ev)  // Gecko (Firefox), WebKit (Safari/Chrome) & Opera
-          isRightMB = ev.which == 3; 
-      else if ("button" in ev)  // IE, Opera 
-          isRightMB = ev.button == 2;
-    })
-
     html.find('#fate').mousedown(async ev => {
       let newValue;
       if(ev.button == 0){
@@ -128,23 +129,20 @@ export class TAAActorSheet extends ActorSheet {
   _onItemCreate(event) {
     event.preventDefault();
     const header = event.currentTarget;
+    let data = duplicate(header.dataset);
     // Get the type of item to create.
     const type = header.dataset.type;
-    // Grab any data associated with this control.
-    const data = duplicate(header.dataset);
+    if(type == "skill"){
+      data = mergeObject(data,
+        {
+          "data.advanced.value": event.currentTarget.attributes["data-skill-type"].value
+        });
+    }
     // Initialize a default name.
-    const name = `New ${type.capitalize()}`;
-    // Prepare the item object.
-    const itemData = {
-      name: name,
-      type: type,
-      data: data
-    };
-    // Remove the type from the dataset since it's in the itemData.type prop.
-    delete itemData.data["type"];
+    data["name"] = `New ${type.capitalize()}`;
 
     // Finally, create the item!
-    return this.actor.createOwnedItem(itemData);
+    return this.actor.createOwnedItem(data);
   }
 
   /**
@@ -153,6 +151,7 @@ export class TAAActorSheet extends ActorSheet {
    * @private
    */
   _onRoll(event) {
+    console.log('rolling')
     event.preventDefault();
     const target = event.currentTarget.dataset.roll;
 

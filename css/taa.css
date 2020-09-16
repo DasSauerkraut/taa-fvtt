@@ -85,6 +85,11 @@
     text-align: center;
 }
 
+.skills-table .container .subsection .header .item.control{
+	font-size: 10px;
+    color: rgba(147,139,119,1);
+}
+
 .skills-table .container .subsection .list{
 	display: table-row;
 }
@@ -108,6 +113,14 @@
 	box-shadow: 0 0 4px 0px #00000075 inset;
 }
 
+.skills-table .container .subsection .list .item.rollable{
+	font-family: TypographerRotunda;
+    font-weight: bold;
+    color: #562727;
+    font-size: 14px;
+    box-shadow: 0 0 8px 2px #3e060652 inset;
+}
+
 .skills-table .container .subsection .list .item.stat{
 	width: 50px;
 }
@@ -123,6 +136,7 @@
 }
 .skills-table .container .subsection .list .item.control{
 	font-size: 10px;
+	color: rgba(147,139,119,1);
 }
 
 
